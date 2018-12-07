@@ -1,0 +1,48 @@
+<div class="object-popup">
+  <ul>
+    <li><a>Open in Exposure Analytics</a> </li>
+    <li (click)="shareSelectedObject()">
+      <a>
+      <span><img class="options-icon" src="erassets\Images\WorkSpace_Objects_Images\ic_share_light.svg"></span>
+      <span class="share-text">Share</span>
+      </a>
+    </li>
+    <li (click)="copySelectedObject()">
+      <a>
+        <span><img class="options-icon" src="erassets\Images\WorkSpace_Objects_Images\ic_copy_light.svg"></span>
+        <span>Make Copy</span>
+      </a>
+    </li >
+    <li (click)='clickedControl("remove")'>
+      <a>
+        <span><img class="options-icon" src="erassets\Images\WorkSpace_Objects_Images\ic_delete_light.svg"></span>
+        <span>Remove from Workspace</span>
+      </a>
+    </li>
+    <li (click)='clickedControl("archive")'>
+      <a>
+        <span><img class="options-icon" src="erassets\Images\WorkSpace_Objects_Images\ic_archive_light.svg"></span>
+        Archive
+      </a>
+    </li>
+    <li (click)='clickedControl("move")'>
+      <a>Move to Other Workspace</a>
+    </li>
+  </ul>
+</div>
+
+<app-msw-share-object-popup
+[sharePopUpDisplay]="sharePopUpDisplay"
+[selectedObjectData]="selectedObjectForControls"
+(sharePopUpDisplayClose)=sharePopUpDisplayClose($event)
+>
+
+</app-msw-share-object-popup>
+
+<app-msw-make-copy-popup
+[makeACopyPopupDisplay]="makeACopyPopupDisplay"
+(makeCopyPopupClose)=makeCopyPopupClose($event)
+[selectedObjectData]="selectedObjectForControls"
+>
+
+</app-msw-make-copy-popup>

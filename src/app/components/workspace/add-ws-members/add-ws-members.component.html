@@ -1,0 +1,116 @@
+<div class="add-members-outlet">
+  <header class="add-members-header">Walking Tree - Add Members</header>
+  <div class="search-and-invite-mail">
+    <app-search-box (returnUserOption)="returnUserOption($event)">
+      <button class="primary-button1" (click)="invitePeopleViaMail()">
+        <i class="icon-add-person"></i>
+        {{userConfirmation.title}}
+      </button>
+    </app-search-box>
+    <!-- </div> -->
+    <!-- <div class="list-filter">
+      <img src="erassets\Images\list-filter.svg" class="list-filter-image" />
+    </div> -->
+    <button>
+      <!-- <img src="erassets\Images\ic_addperson_white.svg" class="person-mail-add-icon"> -->
+      <!-- <span class="ui-button-text ui-clickable create-label"> -->
+      <!-- </span> -->
+    </button>
+
+    <div class="members-data">
+      <div class="ui-g-12">
+        <div class="members">Members({{workspaceMembers.length}})</div>
+        <div *ngFor="let memberdata of workspaceMembers | memberPipe:userInput;" class="members-list">
+          <div class="specific-member">
+            <!-- <img src="{{memberdata.ImageUrl}}" class="member-image">
+            <div class="member-data">
+              <div class="person-name">
+                {{memberdata.MemberName}}
+              </div>
+              <div class="person-designation">
+                {{memberdata.Designation}}
+              </div>
+              <div class="person-position">
+                <img src="erassets\Images\ic_checked_green.svg" class="check-mark" />
+                <span class="position-label">{{memberdata.Position}}</span>
+              </div>
+            </div> -->
+            <div class="personal-image">
+                <img src="{{memberdata.ImageUrl}}" class="personal-image">
+              </div>
+              <div>
+                <div class="person-name">
+                  {{memberdata.MemberName}}
+                </div>
+                <div class="person-designation">
+                  {{memberdata.Designation}}
+                </div>
+                  <div>
+                    <img src="erassets\Images\ic_checked_green.svg" class="check-mark" />
+                    <span class="position-label">{{memberdata.Position}}</span>
+                  </div>
+              </div>
+              <div [ngClass]="{'more-details-popup':(memberdata===popupDetails)}">
+                  <p-panel  [showHeader]="false"  *ngIf="(memberdata===popupDetails) && moreDetailsPopup">
+                      <div>Remove from Workspace</div>
+                    </p-panel>
+            </div>
+              <i (click)="moreDetails(memberdata)" [ngClass]="{'icon-more inline-action-button more-icon':(memberdata.Position!=='Workspace Admin')}"></i>
+            
+          </div>
+          </div>
+         
+      </div>
+      <div class="ui-g-12">
+        <div class="non-members">Non-Members</div>
+        <div *ngFor="let specificMember of members | memberPipe:userInput; index as i " class="non-members-list">
+          <div class="specific-non-member">
+            <!-- <div style="float:left;display: inline-flex">
+            <img src="{{specificMember.ImageUrl}}" class="personal-image">
+            <div class="non-member-data">
+              <div class="person-name">
+                {{specificMember.MemberName}}
+              </div>
+              <div class="person-designation">
+                {{specificMember.Designation}}
+              </div>
+            </div>
+          </div> -->
+            <div class="personal-image">
+              <img src="{{specificMember.ImageUrl}}" class="personal-image">
+            </div>
+            <div>
+              <div class="person-name">
+                {{specificMember.MemberName}}
+              </div>
+              <div class="person-designation">
+                {{specificMember.Designation}}
+              </div>
+            </div>
+            <div class="add-as-member">
+              <!-- <button class="add-as-member" pbutton type="button" (click)="addMember(specificMember,i)">
+              <img src="erassets\Images\ic_addperson_white.svg" class="person-add-icon">
+              <span class="ui-button-text ui-clickable add-label">
+                Add
+              </span>
+            </button> -->
+              <button class="primary-button1 smallbutton" (click)="addMember(specificMember,i)">
+                <i class="icon-add-person icon"> </i>
+                add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui-g-12 user-choices">
+      <button class="back-to-creation primary-button2" (click)="createNewWorkspace()">Back</button>
+      <button class="finish-the-creation primary-button1" (click)="creationComplete()">Finish</button>
+    </div>
+  </div>
+  </div>
+  <app-invite-via-mail [display]="display" (closePopupDisplay)=closePopupDisplay($event) [userConfirmationData]="userConfirmation"></app-invite-via-mail>
+
+ 
+
+ 

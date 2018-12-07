@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}.cls-2{fill:none}
+        </style>
+    </defs>
+    <g id="ic_archive_white" transform="translate(-344 -1302)">
+        <path id="Path_436" d="M16.642 4.734l-1.081-1.306A1.129 1.129 0 0 0 14.667 3H5.333a1.156 1.156 0 0 0-.9.428L3.358 4.734A1.523 1.523 0 0 0 3 5.722v9.722A1.56 1.56 0 0 0 4.556 17h10.888A1.56 1.56 0 0 0 17 15.444V5.722a1.523 1.523 0 0 0-.358-.988zM10 14.278L5.722 10h2.722V8.444h3.111V10h2.722zM4.649 4.556l.63-.778h9.333l.731.778z" class="cls-1" data-name="Path 436" transform="translate(344 1302)"/>
+        <path id="Path_437" d="M0 0h20v20H0z" class="cls-2" data-name="Path 437" transform="translate(344 1302)"/>
+    </g>
+</svg>

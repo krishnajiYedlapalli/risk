@@ -1,0 +1,62 @@
+@import '../../../../../styles.scss';
+.msw-all-activities{
+    width:100%;
+    max-height:calc(100vh - 309px);
+    overflow:auto;
+}
+.workspace-activities{
+    margin-left:28%;
+    margin-right:27%;
+}
+.activity-date{
+    font-size:12px;
+    color:#8887A3;
+    font-family:Barlow-Italic;
+}
+.activity-add-icon{
+    width:18px;
+    height:12px;
+    color:#6BC687;
+}
+.file-add-icon{
+    width:20px;
+    height:20px;
+    color:#6BC687;
+}
+.user-name{
+    font-size:14px;
+    color:#6F6E8E;
+    font-family:SourceSansPro-Regular;
+    font-weight:bolder;
+    margin-left:10px;
+}
+.user-activity{
+    font-size:14px;
+    color:#6F6E8E;
+    font-family:SourceSansPro-Regular;
+    margin-left:5px;
+}
+.added-file-name{
+    font-size:14px;
+    color:#6F6E8E;
+    font-family:SourceSansPro-Regular;
+    font-weight:bolder;
+    margin-left:5px;
+}
+.user-activity-time{
+    font-size:12px;
+    color:#6F6E8E;
+    font-family:SourceSansPro-Regular;
+    margin-top:9px;
+}
+.msw-all-activities::-webkit-scrollbar {
+    width: 4px;
+}
+.msw-all-activities::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+.msw-all-activities::-webkit-scrollbar-thumb {
+    background-color: rgba(00, 00, 00, 0.16);
+    opacity: 0.36;
+    border-radius: 6px;
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{fill:#bcbccb}
+        </style>
+    </defs>
+    <g id="ic_share_light" transform="translate(-506 -236)">
+        <g id="Group_256" data-name="Group 256">
+            <g id="baseline-share-24px" transform="translate(506 236)">
+                <path id="Path_383" d="M0 0h24v24H0z" class="cls-1" data-name="Path 383"/>
+                <path id="Path_384" d="M17.556 15.824a2.808 2.808 0 0 0-1.9.756l-6.921-4.074a3.25 3.25 0 0 0 .087-.687 3.25 3.25 0 0 0-.087-.687L15.577 7.1a2.881 2.881 0 0 0 1.98.8 2.946 2.946 0 1 0-2.911-2.945 3.25 3.25 0 0 0 .087.687L7.891 9.668a2.881 2.881 0 0 0-1.98-.8 2.946 2.946 0 0 0 0 5.891 2.881 2.881 0 0 0 1.98-.8l6.909 4.094a2.8 2.8 0 0 0-.078.638 2.834 2.834 0 1 0 2.834-2.867z" class="cls-2" data-name="Path 384" transform="translate(.266 .177)"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{fill:#7c7b98}
+        </style>
+    </defs>
+    <g id="ic_delete_light" transform="translate(-777 -1235)">
+        <path id="Path_429" d="M0 0h20v20H0z" class="cls-1" data-name="Path 429" transform="translate(777 1235)"/>
+        <path id="Path_430" d="M5.714 15.444A1.5 1.5 0 0 0 7.143 17h5.714a1.5 1.5 0 0 0 1.429-1.556V6.111H5.714zm1.757-5.537l1.007-1.1L10 10.459l1.514-1.649 1.007 1.1-1.514 1.649 1.514 1.641-1.007 1.1L10 12.652 8.486 14.3l-1.007-1.1 1.514-1.649zM12.5 3.778L11.786 3H8.214l-.714.778H5v1.555h10V3.778z" class="cls-2" data-name="Path 430" transform="translate(777 1235)"/>
+        <path id="Path_431" d="M0 0h20v20H0z" class="cls-1" data-name="Path 431" transform="translate(777 1235)"/>
+    </g>
+</svg>

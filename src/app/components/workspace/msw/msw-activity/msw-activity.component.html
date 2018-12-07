@@ -1,0 +1,30 @@
+<div class="msw-all-activities">
+<div class="workspace-activities" *ngFor="let data of specificWorkspaceActivities">
+  <div class="ui-g">
+    <div class="ui-g-12 activity-date">
+      <div *ngIf="dateCategoryShowHide(data)">
+        {{dateCategory}}
+      </div>
+    </div>
+  </div>
+  <div class="ui-g">
+    <div class="ui-g-9">
+      <div>
+        <span *ngIf="data.Activity==' joined the workspace'" class="activity-add-icon"><i class="fa fa-user-plus"></i></span>
+        <span *ngIf="data.Activity=='added'" class="file-add-icon"><i class="fa fa-file"></i></span>
+        <span class="user-name">{{data.userName}}</span>
+        <span class="user-activity">{{data.Activity}}</span>
+        <span class="added-file-name">{{data.fileName}}</span>
+      </div>
+    </div>
+    <div class="ui-g-3" class="user-activity-time">
+      <div *ngIf="data.daysDiff==0">
+        {{data.hoursDiff + ' ' + data.datePart}} ago
+      </div>
+      <div *ngIf="data.daysDiff>0">
+        {{data.daysDiff + ' ' + data.datePart}} ago
+      </div>
+    </div>
+  </div>
+</div>
+</div>

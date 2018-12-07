@@ -1,0 +1,47 @@
+<div class="my-workspace">
+<div class="specific-user-account">
+  <div class="selected-user-account-details">
+  <div class="ui-g">
+    <div class="ui-g-5 specific-user-account-name">
+      <div *ngIf="!editable">{{specificUserData?.account_name}}</div>
+      <div *ngIf="editable"><input class="input" type="text" pInputText [placeholder]="specificUserData?.account_name" [(ngModel)]="specificUserData.account_name"></div>
+    </div>
+    <div *ngIf="!isSaveAndCancel" class="ui-g-6">
+      <span (click)="editUserDetails()" style="cursor:pointer">
+        <span><img class="user-info-edit-icon" src="erassets\Images\WorkSpace_Images\ic_edit_light.svg"></span>
+        <span class="user-info-edit">Edit Info</span>
+      </span>
+    </div>
+    <div class="ui-g-7 save-and-cancel" *ngIf="isSaveAndCancel">
+     <img src="erassets/Images/WorkSpace_Images/ic_save_light.svg"> <button type="button" class="edited-info-button save-button" (click)=saveUserInfo(specificUserData)>Save</button>
+     <img src="erassets/Images/WorkSpace_Images/ic_cancel_light.svg"> <button type="button" class="edited-info-button" (click)=cancelSavingUserInfo()>Cancel</button>
+    </div>
+  </div>
+  <div class="ui-g">
+    <div class="ui-g-7 specific-user-account-desc">
+      <div *ngIf="!editable">{{specificUserData.account_description}}</div>
+      <div class="edit-account-description" *ngIf="editable"><textarea pInputTextarea type="text" [placeholder]="specificUserData.account_description" [(ngModel)]="specificUserData.account_description"></textarea></div>
+    </div>
+  </div>
+  </div>
+  <div class="tab-view">
+    <p-tabView>
+      <p-tabPanel header="Activity">
+        <div class="activity-tab">
+          <app-msw-activity></app-msw-activity>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Objects">
+        <app-msw-objects></app-msw-objects>
+      </p-tabPanel>
+      <p-tabPanel header="Members">
+        <app-msw-members></app-msw-members>
+      </p-tabPanel>
+      <p-tabPanel leftIcon="fa fa-cog">
+        <app-msw-settings></app-msw-settings>
+      </p-tabPanel>
+
+    </p-tabView>
+  </div>
+</div>
+</div>

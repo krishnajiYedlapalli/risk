@@ -1,0 +1,26 @@
+<div class="create-new-workspace-menu">
+  <div class="ui-g-12 create-new-workspace">
+    <header class="new-workspace-header">New Workspace</header>
+    <div class="ui-g-3"></div>
+    <div class="ui-g-7 create-new-workspace-body">
+      <div class="related-notification">
+        <span class="notification-label">You can create 2 more workspaces. Name of your workspace should be unique.</span>
+      </div>
+      <div>
+        <input type="text" class="input workspace-name" [(ngModel)]="WorkspaceName" />
+      </div>
+      <div>
+        <textarea pInputTextarea class="input workspace-description" [(ngModel)]="WorkspaceDescription"></textarea>
+      </div>
+      <div class="create-workspace-divivsion">
+        <p-dropdown [options]="cities" placeholder="Select a Division" optionLabel="name"></p-dropdown>
+      </div>
+    </div>
+    <div>
+      <div class="ui-g-12 workspace-user-choice">
+        <button class="cancel-the-creation primary-button2" (click)="backClicked()">Cancel</button>
+        <button class="proceed-with-creation primary-button1" (click)="addMembersToWorkspace()" [ngClass]="{'nextButton': !WorkspaceName || !WorkspaceDescription}">Next</button>
+      </div>
+    </div>
+  </div>
+</div>

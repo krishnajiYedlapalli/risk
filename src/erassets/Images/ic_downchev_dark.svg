@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:#6f6e8e}.cls-2{fill:none}
+        </style>
+    </defs>
+    <g id="icon_downchev_dark" transform="translate(-692 -8)">
+        <g id="baseline-chevron_left-24px" transform="rotate(-90 362 -330)">
+            <path id="Path_375" d="M7.41 1.41L6 0 0 6l6 6 1.41-1.41L2.83 6z" class="cls-1" data-name="Path 375" transform="translate(8 6)"/>
+            <path id="Path_376" d="M0 0h24v24H0z" class="cls-2" data-name="Path 376"/>
+        </g>
+    </g>
+</svg>

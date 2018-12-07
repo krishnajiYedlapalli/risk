@@ -1,0 +1,23 @@
+@import "./primary-button1-theme";
+@import "./primary-button2-theme";
+@import "./secondary-button1-theme";
+@import "./secondary-button2-theme";
+@import "./inline-action-button-theme";
+@import "./inline-input-group-theme";
+@import "./input-theme";
+@import "./checkbox-theme";
+@import "./radiobutton-theme";
+
+
+
+@mixin themes() {
+  @include primary-button1-theme();
+  @include primary-button2-theme();
+  @include secondary-button1-theme();
+  @include secondary-button2-theme();
+  @include input-theme();
+  @include inline-action-button-theme();
+  @include inline-input-group-theme();
+  @include checkbox-theme();
+  @include radiobutton-theme();
+}

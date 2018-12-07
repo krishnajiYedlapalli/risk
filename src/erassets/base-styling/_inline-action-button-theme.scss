@@ -1,0 +1,31 @@
+@import "./variables";
+
+@mixin inline-action-button-theme() {
+ 
+  .inline-action-button{
+    font-size: 24px;
+    color:map-get($colors,steel);
+    line-height: 24px;
+    padding: 8px;
+    border: 1px solid map-get($colors,pale-grey);
+    background-color: #ffffff;
+    border-radius: 4px;
+    display: inline-block;
+    height: 40px;
+    margin-left: 16px;
+
+    &:hover{
+      border-color:  map-get($colors,sky-blue);
+    }
+    &:active{
+      background-color: map-get($colors,steel); 
+      color: #ffffff;
+    }
+      &[disabled] {
+        background-color: map-get($inputfield-colors, disabled-background-color);
+        color: map-get($colors, disabled-color);
+        cursor: not-allowed;
+      }
+  }
+ 
+}

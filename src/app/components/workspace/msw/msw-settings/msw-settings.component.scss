@@ -1,0 +1,143 @@
+@import '../../../../../styles.scss';
+.container{
+    width:100%;
+    max-height:calc(100vh - 309px);
+    overflow:auto;
+}
+.middle-column{
+    margin-top: 40px;
+    width:440px;
+    margin-left: 324px;
+}
+p-card{
+    width: 100%;
+}
+.card-inner-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-inner-div-1{
+    display: flex;
+    margin: 8px 8px 8px 8px;
+    width: 193px;
+    height: 64px;
+    color: #4D4F5C;
+}
+.labels{
+    margin-left: 32px;
+}
+.avatar{
+    vertical-align: middle;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+.name{ 
+    font-family: 'SourceSansPro-bold';
+    font-size: 16px;
+}
+.des{
+    margin-top: 4px;
+    font-family: 'SourceSansPro-Regular';
+    font-size: 12px;
+    opacity: 0.5;
+}
+.ws-content{
+    font-family: 'SourceSansPro-Regular';
+    font-size: 10px;
+    display: flex;
+}
+.ws-content img{
+    margin-top: 7px;
+    width:14px;
+    height: 14px;
+}
+.ws{
+    margin-top: 7px;
+}
+.card-inner-div-2{
+    color: #43425D;
+    text-decoration: underline;
+    font-family: 'SourceSansPro-italic';
+    font-size: 12px;
+    margin-right: 16px;
+}
+.archive-workspace{
+    margin-top: 48px;
+    background-color: #43425D;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    width: 246px;
+    height: 50px;
+}
+.unarchive-workspace{
+    margin-top: 48px;
+    background-color: #43425D;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    width: 269px;
+    height: 50px;
+}
+.delete-workspace{
+    margin-top: 32px;
+    background-color: #f48892;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    width: 245px;
+    height: 50px;
+}
+button img{
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    margin-left: 20px;
+    margin-right: 8px;
+}
+button div{
+    color: #FFFFFF;
+    font-family: 'SourceSansPro-Regular';
+    font-size: 18px; 
+}
+ .points{
+     color:#4D4F5C;
+     opacity: 0.5;
+     margin-top: 8px;
+     font-family: 'SourceSansPro-Regular';
+     font-size: 13px;
+ }
+ :host/deep/.ui-card-body {
+    padding: 0;
+}
+.primary-button2{
+    margin-top: 48px;
+}
+.icon-archive{
+    font-size: 20px;
+}
+i{
+    margin-top: 2px;
+}
+.primary-button1{
+    margin-top: 32px;
+}
+.icon-delete{
+    font-size: 20px;
+}
+
+
+
+.container::-webkit-scrollbar {
+    width: 4px;
+}
+.container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+.container::-webkit-scrollbar-thumb {
+    background-color: rgba(00, 00, 00, 0.16);
+    opacity: 0.36;
+    border-radius: 6px;
+}

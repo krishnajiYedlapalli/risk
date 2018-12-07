@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{fill:#bcbccb}
+        </style>
+    </defs>
+    <g id="ic_copy_lighter" transform="translate(-546 -236)">
+        <g id="baseline-file_copy-24px" transform="translate(546 236)">
+            <path id="Path_395" d="M0 0h24v24H0z" class="cls-1" data-name="Path 395"/>
+            <path id="Path_396" d="M13.789 1H3.684A1.689 1.689 0 0 0 2 2.684v11.79h1.684V2.684h10.105zm-.842 3.369L18 9.421v8.421a1.689 1.689 0 0 1-1.684 1.684H7.044a1.682 1.682 0 0 1-1.676-1.684l.008-11.79a1.682 1.682 0 0 1 1.677-1.683zm-.842 5.9h4.632l-4.632-4.637z" class="cls-2" data-name="Path 396" transform="translate(2 2)"/>
+        </g>
+    </g>
+</svg>

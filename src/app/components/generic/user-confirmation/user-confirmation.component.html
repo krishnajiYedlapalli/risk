@@ -1,0 +1,28 @@
+<p-dialog [(visible)]="display" [modal]="true" [responsive]="true" [width]="462" [minHeight]="282.15" [minWidth]="200"
+  [maximizable]="true" [baseZIndex]="10000" [contentStyle]="{'padding':'0px','margin':'0px','border-radius':'4px'}"
+  [showHeader]="false" class="user-confirmation">
+  <div *ngIf="userConfirmationData">
+    <div class="ui-g panel-header">
+      <div *ngIf="showCancelIcon" class="ui-g-11 header-text">
+        {{userConfirmationData.title}}
+      </div>
+      <div *ngIf="!showCancelIcon" class="ui-g-12 header-text">
+        {{userConfirmationData.title}}
+      </div>
+      <div *ngIf="showCancelIcon" class="ui-g-12 ui-md-1" (click)="hideDialog()">
+        <img class="close-icon" src="erassets\Images\WorkSpace_Images\popupCloser.svg">
+      </div>
+    </div>
+
+    <div class="ui-g leave-workspace-text">
+      <div class="ui-sm-12 leave-workspace-upper-text">
+          {{userConfirmationData.primaryMessage}}
+      </div>
+      <div class="ui-sm-12 leave-workspace-lower-text">{{userConfirmationData.secondaryMessage}}</div>
+    </div>
+    <div class="ui-g">
+      <button type="button" class="ui-sm-12 ui-md-6 ui-button-raised ui-button-rounded backward-button"  (click)="hideDialog()">{{userConfirmationData.secondaryButton}}</button>
+      <button type="button" class="ui-sm-12 ui-md-6 ui-button-raised ui-button-rounded forward-button"  (click)="deleteWorkSpace(workSpaceData)">{{userConfirmationData.primaryButton}}</button>
+    </div>
+  </div>
+</p-dialog>

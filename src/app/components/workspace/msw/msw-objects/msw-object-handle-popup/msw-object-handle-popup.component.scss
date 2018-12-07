@@ -1,0 +1,40 @@
+@import '../../../../../../styles.scss';
+// .object-popup{
+//     position: absolute;
+//     z-index: 100;
+// }
+.object-popup ul{
+    // position:absolute;
+    background-color:white;
+    width:234.95px;
+    padding-left:0px;
+    // z-index: 100;
+    // display:none;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.24);
+    border-radius:4px;
+    // right:-100px;
+    }
+    .object-popup ul li{
+        display:block;
+        padding:10px;
+        width:234.95px;
+        cursor:pointer;
+        height:50px;
+        border-bottom:1px solid #ebebf2;
+    }
+    .object-popup ul li a{
+    text-decoration: none;
+    font-size:14px;
+    font-family:SourceSansPro-Regular;
+    color:#6E6D7C;
+    }
+    // .object-popup ul li:hover{
+    //     // background-color:gray;
+    // }
+    .options-icon{
+        width:14px;
+        height:15.92px;
+        margin-right:10px;
+        margin-top:5px;
+    }
+    

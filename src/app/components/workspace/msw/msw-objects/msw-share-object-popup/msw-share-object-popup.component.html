@@ -1,0 +1,86 @@
+<p-dialog [(visible)]="sharePopUpDisplay" [modal]="true" [responsive]="true" [minWidth]="600" [maximizable]="true"
+  [baseZIndex]="100000" [contentStyle]="{'padding':'0px','margin':'0px','border-radius':'4px','box-shadow':'0px 2px 16px #000000'}"
+  [showHeader]="false" class="share-selected-object">
+  <div>
+    <div class="ui-g pop-up-header">
+      <div class="ui-g-11 pop-up-header-share">Sharing</div>
+      <div class="ui-g-1" (click)="cancelSharing()"><img class="pop-up-close" src="src\erassets\Images\WorkSpace_Images\closeWithOutlineCircle.svg"></div>
+    </div>
+    <div *ngIf="selectedObjectData">
+      <div class="ui-g selected-object-info">
+        <div class="ui-g-6">
+          <div class="ui-g-2 selected-icon-image"><img src={{selectedObjectData.iconImage}}></div>
+          <div class="ui-g-8">
+            <div class="selected-object-name">{{selectedObjectData.objectName}}</div>
+            <div class="selected-object-date">{{selectedObjectData.customDate}}</div>
+          </div>
+        </div>
+        <div class="ui-g-6">
+          <div class="copy-url-section">
+            <div class="ui-g-9 copy-url"><input #inputUrl type="text" value={{selectedObjectData.objectUrl}}></div>
+            <div class="ui-g-3 copy-button" (click)="copyUrl(inputUrl)">Copy</div>
+          </div>
+        </div>
+      </div>
+      <div class="shared-user-info">
+        <div class="shared-user-header">Shared With</div>
+        <div class="shared-users">
+          <div *ngFor="let userInfo of selectedObjectData.sharedWith">
+            <div class="ui-g user-details">
+              <div class="ui-g-1"><img class="user-image" src={{userInfo.userImage}}></div>
+              <div class="ui-g-4 shared-user-name">{{userInfo.userName}}</div>
+              <div class="ui-g-2 user-access">can view</div>
+              <div class="ui-g-1"><img class="share-icon" src="erassets\Images\WorkSpace_Objects_Images\ic_share_lighter.svg"></div>
+              <div class="ui-g-1"><img class="copy-icon" src="erassets\Images\WorkSpace_Objects_Images\ic_copy_lighter.svg"></div>
+              <div class="ui-g-1"><img class="visibility-icon" src="erassets\Images\WorkSpace_Objects_Images\ic_visibility_red.svg"></div>
+              <div class="ui-g-1"><img class="three-dots-icon" src="erassets\Images\WorkSpace_Images\moreVert.svg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="invitation-section">
+        <div class="invite-header">Invite People</div>
+        <form #inviteEmail="ngForm">
+        <div *ngIf="invitePeople">
+          <div class="invite-emails"><input type="email" name="email" placeholder="Email Address" [(ngModel)]="email" required></div>
+          <div class="highlight-permission">Highlight Permission</div>
+          <div class="ui-g send-invite-section">
+            <div class="ui-g-1"></div>
+            <div class="ui-g-1">
+              <img class="share-icon" src="src\erassets\Images\WorkSpace_Objects_Images\ic_share_lighter.svg">
+            </div>
+            <div class="ui-g-1">
+              <img class="copy-icon" src="erassets\Images\WorkSpace_Objects_Images\ic_copy_lighter.svg">
+            </div>
+            <div class="ui-g-1">
+              <img class="visibility-icon" src="erassets\Images\WorkSpace_Objects_Images\ic_visibility_red.svg">
+            </div>
+            <div class="ui-g-8">
+             
+              <button class="ui-button share-button" pbutton type="button" (click)="shareTheSelectedObject(email)" [disabled]="!inviteEmail.form.valid">
+                  <span class="ui-g-4"><img src="erassets\Images\WorkSpace_Objects_Images\ic_share_white.svg" class="button-share-icon"></span>
+                  <span class="ui-g-8 ui-button-text ui-clickable button-share-text">
+                    Share
+                  </span>
+                </button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isSharing" class="sharing-in-progress">
+          <div><img class="loader" src="erassets\Images\WorkSpace_Objects_Images\loader.svg"></div>
+          <div class="sharing-in-progress-text">Sharing...</div>
+        </div>
+        <div *ngIf="isSharingDone" class="sharing-done">
+          <div><img class="check-with-outline-circle" src="src\erassets\Images\WorkSpace_Images\chekWithOutlineCircle.svg"></div>
+          <div class="sharing-done-text">Shared</div>
+        </div>
+        <div>
+          <button type="button" class="done-button" (click)="doneWithSharing()">
+            Done
+          </button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</p-dialog>

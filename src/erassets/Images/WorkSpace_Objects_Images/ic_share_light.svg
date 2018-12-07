@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{fill:#7c7b98}
+        </style>
+    </defs>
+    <g id="ic_share_light" transform="translate(-973 -606)">
+        <path id="Path_581" d="M0 0h20v20H0z" class="cls-1" data-name="Path 581" transform="translate(973 606)"/>
+        <path id="Path_582" d="M15.5 13.733a2.427 2.427 0 0 0-1.633.642l-5.942-3.458A2.728 2.728 0 0 0 8 10.333a2.728 2.728 0 0 0-.075-.583L13.8 6.325A2.494 2.494 0 1 0 13 4.5a2.728 2.728 0 0 0 .075.583L7.2 8.508a2.5 2.5 0 1 0 0 3.65l5.933 3.467a2.351 2.351 0 0 0-.067.542 2.433 2.433 0 1 0 2.434-2.434z" class="cls-2" data-name="Path 582" transform="translate(972.5 605.667)"/>
+    </g>
+</svg>

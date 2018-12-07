@@ -1,0 +1,29 @@
+<div style="margin-top:15%">
+<div class="row">
+    <div class="col-sm-4">
+    </div>
+  <div class="col-sm-4">
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" [(ngModel)]="userName">
+  </div>
+  </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-4">
+        </div>
+    <div class="col-sm-4">
+  <div>
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" [(ngModel)]="password">
+  </div>
+</div>
+</div>
+  <div class="row" style="margin-top:1%;margin-left:1%">
+      <div class="col-sm-7">
+        </div>
+    <div class="col-sm-4">
+  <input type="button" class="btn btn-primary" value="Submit" (click)="login()">
+</div>
+</div>
+</div>

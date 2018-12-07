@@ -1,0 +1,26 @@
+<div class="workspace-page">
+  <div class="workspace-page-container">
+    <div class="ui-g workspace-page-header">
+      <div class="ui-g-7 workspace-page-header-text">
+        <span class="ui-g-2 manage-specific-workspace-back-button" *ngIf="workspaceService.getBackButton()" (click)="backToManageWorkSpaces()">
+          <span class="ui-g-1"><img class="manage-specific-workspace-back-icon" src="erassets\Images\WorkSpace_Images\manage-specific-workspace-arrow_back_ios-24px.svg"></span>
+          <span class="ui-g-9 manage-specific-workspace-back-text">Back</span>
+        </span>
+        <span class="ui-g-9 workspace-page-header-name">
+        <span class="workspace-page-header-text-style">{{workspaces}}</span>
+        <span class="workspace-page-header-text-style-subcat"> {{manageAllYourWorkspaces}}</span>
+      </span>
+      </div>
+      <div class="ui-g-5 workspace-page-header-control">
+        <!-- <app-create-workspace-button class="create-workspace-button" (click)="createNewWorkspace()">
+        </app-create-workspace-button> -->
+        <button class="primary-button1" (click)="createNewWorkspace()">
+          <i class="icon icon-add"></i>Create Workspace
+        </button>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+  </div>
+
+  <p-toast></p-toast>

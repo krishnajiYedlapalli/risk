@@ -1,0 +1,137 @@
+<div class="search-and-invite-mail">
+  <input class="search-box input" type="search" placeholder="Search" (keyup)="dv.filter($event.target.value); dv1.filter($event.target.value)"
+  />
+  <div class="search-icon-position">
+    <img src="erassets\Images\searchImage.svg" class="search-image" />
+  </div>
+  <button class="primary-button1">
+    <i class="icon-add-person"> </i>
+    Invite-via-email
+  </button>
+</div>
+
+<div class="member-guest">
+  <p-dataView #dv [value]="members" filterBy="MemberName,Position,Designation">
+    <p-header class="title-members">members </p-header>
+    <ng-template let-member pTemplate="listItem">
+      <ng-container *ngIf="member.Position == 'member'">
+        <p-card class="member-guest-card">
+          <div class="member-image"></div>
+          <div class="member-details">
+            <div class="member-name">{{ member.MemberName }}</div>
+            <div class="member-designation">{{ member.Designation }}</div>
+            <div class="member-check-position">
+              <img class="check-with-tick" src="erassets/Images/WorkSpace_Images/chekWithOutlineCircle.svg" alt="icon" />
+              <div class="member-position">{{ member.Position }}</div>
+            </div>
+          </div>
+          <i class="icon-more menu-image" (click)="popup(member)"></i>
+          <div class="object-popup" *ngIf="displayPopup && (member===specificMemberDetails)">
+            <ul>
+              <li (click)="removeFromworkspace(member)">
+                <a>Remove from Workspace</a>
+              </li>
+              <li (click)="changeRole()">
+                <a>
+                  <span>Change Role</span>
+                  <span>
+                    <img class="options-icon" src="erassets/Images/baseline-arrow_back_ios-24px.svg">
+                  </span>
+                </a>
+              </li>
+              <div class="changerole-popup" *ngIf="changeRolePopup">
+                <ul>
+                  <li>
+                    <a>Workspace Manager</a>
+                  </li>
+                  <li>
+                    <a>Guest</a>
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+        </p-card>
+      </ng-container>
+    </ng-template>
+  </p-dataView>
+
+  <p-dataView #dv1 [value]="members" filterBy="MemberName,Position,Designation">
+    <p-header class="title-members">guests</p-header>
+    <ng-template let-member pTemplate="listItem">
+      <ng-container *ngIf="member.Position == 'guest'">
+        <p-card class="member-guest-card">
+          <div class="member-image"></div>
+          <div class="member-details">
+            <div class="member-name">{{ member.MemberName }}</div>
+            <div class="member-designation">{{ member.Designation }}</div>
+            <div class="member-check-position">
+              <img class="check-with-tick" src="erassets/Images/WorkSpace_Images/chekWithOutlineCircle.svg" alt="icon" />
+              <div class="member-position">{{ member.Position }}</div>
+            </div>
+          </div>
+          <i class="icon-more menu-image" (click)="popup(member)"></i>
+          <div class="object-popup" *ngIf="displayPopup && (member===specificMemberDetails)">
+            <ul>
+              <li (click)="removeFromworkspace(member)">
+                <a>Remove from Workspace</a>
+              </li>
+              <li (click)="changeRole()">
+                <a>
+                  <span>Change Role</span>
+                  <span>
+                    <img class="options-icon" src="erassets/Images/baseline-arrow_back_ios-24px.svg">
+                  </span>
+                </a>
+              </li>
+              <div class="changerole-popup" *ngIf="changeRolePopup">
+                <ul>
+                  <li>
+                    <a>Workspace Manager</a>
+                  </li>
+                  <li>
+                    <a>Guest</a>
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+        </p-card>
+      </ng-container>
+    </ng-template>
+  </p-dataView>
+           <!-- outside members -->
+
+           <p-dataView  [value]="nonMembers" filterBy="MemberName,Designation">
+              <p-header class="title-members">nonmembers</p-header>
+              <ng-template let-nonMember pTemplate="listItem">
+                <ng-container>
+                  <p-card>
+                      <div class="specific-non-member">
+                    <!-- <div class="member-image"></div>
+                    <div class="member-details">
+                      <div class="member-name">{{ nonMember.MemberName }}</div>
+                      <div class="member-designation">{{ nonMember.Designation }}</div>
+                    </div>
+                    <button class="primary-button1 smallbutton">
+                        <i class="icon-add-person icon"> </i>
+                        add
+                      </button> -->
+                      <div class="personal-image">
+                          <img src="{{nonMember.ImageUrl}}" class="personal-image">
+                        </div>
+                          <div class="person-name">
+                            {{nonMember.MemberName }}
+                          </div>
+                        <div class="add-as-member">
+                          <button class="primary-button1 smallbutton">
+                            <i class="icon-add-person icon"> </i>
+                            add
+                          </button>
+                        </div>
+                        </div>
+                  </p-card>
+                </ng-container>
+              </ng-template>
+            </p-dataView>
+</div>

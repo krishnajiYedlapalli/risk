@@ -1,0 +1,61 @@
+// @import "./inline-action-button-theme";
+// @import "./input-theme";
+
+// @mixin inline-input-group-theme {
+  
+//   .inline-input-group {
+//     display: flex;
+//     .input{
+//         width: 100%;
+//         min-width:0;
+//     }
+//     *{
+//         margin-right: 16px;
+//     }
+//     :last-child{
+//         margin-right: 0px;
+//     } 
+//   }
+// }
+@import "./inline-action-button-theme";
+@import "./input-theme";
+
+@mixin inline-input-group-theme {
+  
+  .inline-input-group {
+    display: flex;
+    position: relative;
+    *{
+    margin-right: 16px;
+
+    &:first-child{
+        margin-right: 0px;
+    }
+   
+    }
+      img{
+          position: absolute;
+         top: 31%;
+          left: 2%;
+          width: 24px;
+          height: 24px; 
+      }
+        .input{
+        width: 100%;
+        min-width:0;
+        padding-left: 40px;
+        height: 40px;
+    }
+    .icon{
+        top: 24%;
+    }
+    .primary-button1{
+        height: 40px;
+    }
+       
+
+    :last-child{
+        margin-right: 0px;
+    } 
+  }
+}

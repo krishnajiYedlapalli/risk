@@ -1,0 +1,28 @@
+@import "./variables";
+
+@mixin secondary-button1-theme() {
+
+
+  .secondary-button1 {
+    @extend %buttonbase;
+    background-color: #ffff;
+    border: map-get($primary-button1, normal) 1px solid;
+ 
+
+    &:not([disabled]) {
+      border: map-get($button-propety, border-size) map-get($button-propety, border-style) map-get($primary-button1, normal);
+      color: map-get($primary-button1, normal);
+
+      &:active {
+        border: map-get($button-propety, 2) map-get($button-propety, border-style) map-get($primary-button1, pressed);
+        color: map-get($primary-button1, pressed);
+      }
+    }
+
+
+    &[disabled] {
+      border: map-get($button-propety, border-size) map-get($button-propety, border-style) map-get($primary-button1, disabled);
+      color: map-get($primary-button1, disabled);
+    }
+  }
+}

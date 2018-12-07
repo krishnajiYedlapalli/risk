@@ -1,0 +1,159 @@
+<div class="object-tab">
+<div class="objects-filter-options">
+  <div class="serach-for-objects">
+    <app-search-box (returnUserOption)="returnUserOption($event)">
+      <i class="icon-filter inline-action-button"></i>
+      <i class="icon-list inline-action-button"></i>
+      <div class="filter-break-line"></div>
+      <i class="icon-archive inline-action-button" (click)='archiveObjects()'></i>
+      <div class="list-filter">
+          <img src="erassets\Images\WorkSpace_Images\moreVert.svg" class="list-filter-image" (click)='verticalEllipses=!verticalEllipses' />
+          <ng-container *ngIf='storingMultipleData.length!=0&&verticalEllipses'>
+            <div class="move-remove-popup">
+              <ul>
+                <li (click)='selectedControlHandler("remove")'>
+                <a>
+                  <span><img class="options-icon" src="erassets\Images\WorkSpace_Objects_Images\ic_delete_light.svg"></span>
+                  <span>Remove from Workspace</span>
+                </a>
+              </li>
+                <li (click)='selectedControlHandler("move")'>
+                  <a>Move to other Workspace </a></li>
+              </ul>
+            </div>
+          </ng-container>
+        </div>
+    </app-search-box>
+  </div>
+  <!-- <div class="list-filter">
+    <img src="erassets\Images\list-filter.svg" class="list-filter-image" />
+  </div> -->
+  <!-- <div class="list-filter">
+    <img src="erassets\Images\WorkSpace_Objects_Images\ic_list_light.svg" class="list-filter-image" />
+  </div>
+  <div class="filter-break-line"></div>
+  <div class="list-filter">
+    <img src="erassets\Images\WorkSpace_Objects_Images\ic_archive_light.svg" class="list-filter-image" />
+  </div>
+  <div class="list-filter">
+      <img src="erassets\Images\WorkSpace_Images\moreVert.svg" class="list-filter-image" />
+    </div> -->
+</div>
+<div class="object-container">
+  <div class="objects-list-inner-container">
+    <div class="objects-list-container">
+      <div>
+        <div class="object-title">Exposures</div>
+        <div *ngFor="let data of exposureArray|objectPipe:userInput">
+          <div #elRef1 class="objects-list" (click)=getSelectedObjectDetails(data,elRef1)>
+            <div class="ui-g">
+              <div class="ui-g-2"><img class="object-icon" src={{data.iconImage}}></div>
+              <div class="ui-g-9 object-item-right">
+                <div class="object-name">{{data.objectName}}</div>
+                <div class="object-date">{{data.customDate}}</div>
+              </div>
+              <div class="ui-g-1 object-control" [ngClass]="{'open-popup': selectedObjectControl && data.objectName==selectedObjectControl.objectName}">
+                <img class="object-control-icon" (click)="selectedObjectControls(data,$event)" src="erassets\Images\WorkSpace_Images\moreVert.svg">
+                <div class="object-popup" *ngIf="data.show">
+                  <app-msw-object-handle-popup [selectedObjectForControls]="selectedObjectControl"  (selectedControl)='selectedControlHandler($event)'></app-msw-object-handle-popup>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="object-title">Analysis</div>
+        <div *ngFor="let data of analysisArray|objectPipe:userInput">
+          <div #elRef2 class="objects-list" (click)=getSelectedObjectDetails(data,elRef2)>
+            <div class="ui-g">
+              <div class="ui-g-2"><img class="object-icon" src={{data.iconImage}}></div>
+              <div class="ui-g-9 object-item-right">
+                <div class="object-name">{{data.objectName}}</div>
+                <div class="object-date">{{data.customDate}}</div>
+              </div>
+              <div class="ui-g-1 object-control" [ngClass]="{'open-popup': selectedObjectControl && data.objectName==selectedObjectControl.objectName}">
+                <img class="object-control-icon" (click)="selectedObjectControls(data,$event)" src="erassets\Images\WorkSpace_Images\moreVert.svg">
+                <div class="object-popup" *ngIf="data.show">
+                  <app-msw-object-handle-popup [selectedObjectForControls]="selectedObjectControl" (selectedControl)='selectedControlHandler($event)'></app-msw-object-handle-popup>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="object-title">Programs</div>
+        <div *ngFor="let data of programsArray|objectPipe:userInput">
+          <div #elRef3 class="objects-list" (click)=getSelectedObjectDetails(data,elRef3)>
+            <div class="ui-g">
+              <div class="ui-g-2"><img class="object-icon" src={{data.iconImage}}></div>
+              <div class="ui-g-9 object-item-right">
+                <div class="object-name">{{data.objectName}}</div>
+                <div class="object-date">{{data.customDate}}</div>
+              </div>
+              <div class="ui-g-1 object-control" [ngClass]="{'open-popup': selectedObjectControl && data.objectName==selectedObjectControl.objectName}">
+                <img class="object-control-icon" (click)="selectedObjectControls(data,$event)" src="erassets\Images\WorkSpace_Images\moreVert.svg">
+                <div class="object-popup" *ngIf="data.show">
+                  <app-msw-object-handle-popup [selectedObjectForControls]="selectedObjectControl" (selectedControl)='selectedControlHandler($event)'></app-msw-object-handle-popup>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui-g details-and-activity">
+    <div class="ui-g-12 activity-details-button">
+      <div class="ui-g-6 details-button">Details</div>
+      <div class="ui-g-6 activity-button">Activity</div>
+    </div>
+    <div>
+      <div *ngIf="!selectedObject" class="details-page-initial-text">
+        Select an object to see the details
+      </div>
+      <div *ngIf="selectedObject&&selectedObject.sharedWith">
+        <div class="selected-object-top-details">
+          <div class="ui-g">
+            <div class="ui-g-2"><img class="object-icon" src={{selectedObject.iconImage}}></div>
+            <div class="ui-g-10 object-item-right">
+              <div class="object-name">{{selectedObject.objectName}}</div>
+              <div class="object-date">{{selectedObject.customDate}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="selected-object-mid-details">
+          <div class=ui-g>
+            <div class="ui-g-4 object-title">Type</div>
+            <div class="ui-g-8 object-info">{{selectedObject.title}}</div>
+          </div>
+          <div class=ui-g>
+            <div class="ui-g-4 object-title">Owner</div>
+            <div class="ui-g-8 object-info">{{selectedObject.ownerName}}</div>
+          </div>
+          <div class=ui-g>
+            <div class="ui-g-4 object-title">Created</div>
+            <div class="ui-g-8 object-info">{{selectedObject.customDate}}</div>
+          </div>
+        </div>
+        <div class="shared-info-section">
+          <div class="ui-g">
+            <div class="ui-g-1"><img class="share-icon" src="erassets\Images\WorkSpace_Objects_Images\ic_share_light.svg"></div>
+            <div class="ui-g-11" class="shared-with">Shared With</div>
+          </div>
+          <div class="shared-info-images">
+            <div class="number-of-images">
+              +{{selectedObject.leftShare}}
+            </div>
+            <div class="shared-user" *ngFor="let userInfo of selectedObject.slicedShare">
+              <div class="shared-user-image"><img class="user-image" src={{userInfo.userImage}}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

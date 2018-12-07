@@ -1,0 +1,28 @@
+// @import "variables";
+@import "./variables";
+
+@mixin secondary-button2-theme() {
+
+
+  .secondary-button2 {
+    @extend %buttonbase;
+    background-color: #ffff;
+ 
+
+    &:not([disabled]) {
+      border: 1px solid map-get($primary-button2, normal);
+      color: map-get($primary-button2, normal);
+
+      &:active {
+        border: 2px solid map-get($primary-button2, pressed);
+        color: map-get($primary-button2, pressed);
+      }
+    }
+
+    &[disabled] {
+      border: 1px solid  map-get($primary-button2, disabled);
+      color: map-get($primary-button2, disabled);
+    }
+  }
+}
+      

@@ -1,0 +1,73 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="headers">
+  <div class="ui-g header-wrapper">
+    <div class="ui-sm-12 ui-md-4 logo alignleft" style="padding-top:18px">
+      <div style="text-align:left;">
+        <div class="logo-element" style="display:inline-block;">
+          <img src="https://prism.eigenrisk.com/assets/images/logo-eigen.png" alt="logo">
+        </div>
+        <div style="padding-left: 20px;font-size: 13px; font-weight: bold; color: white;display:inline-block;">
+          EigenExpress
+        </div>
+      </div>
+    </div>
+    <div class="ui-sm-12 ui-md-4">
+      <app-workspace-menu [userId]="userId" [isWebElement]="false" (selectedAccount)="selectedAccount($event)"></app-workspace-menu>
+    </div>
+    <div class="ui-sm-12 ui-md-4 top-menu alignright">
+      <ul class="navbar-top-links" style="float:right;">
+        <li>
+          <a class=" disabled-link" (click)="simpleAlert()">
+            <i class="fa fa-camera" style="color:white"></i>
+          </a>
+
+          <a style="padding-left: 0px" title="No report chosen yet" (click)="simpleAlert()">
+            <i class="fa fa-caret-down"></i>
+          </a>
+        </li>
+        <li style="display:inline-block">
+          <div class="tour-info-circle" title="Quick tour">
+            <a (click)="simpleAlert()"><i class="fa fa-info"></i></a>
+          </div>
+        </li>
+        <li class="top-nav-help">
+          <div class="btn-group actions btn-default-without-border">
+            <button type="button" title="Help" class="btn btn-transparent btn-default-without-border"
+              data-toggle="dropdown"><a style="color:white">Help</a>
+            </button>
+          </div>
+          <div class="top-nav-help-options">
+            <ul>
+              <li title="Sample Data"><a (click)="simpleAlert()">Sample Data</a></li>
+              <li title="Feedback"><a (click)="simpleAlert()">Feedback</a></li>
+              <li title="Quick Tour"><a (click)="simpleAlert()">Quick Tour</a></li>
+              <li title="Help Center"><a href={{helpCenter}}>Help Center</a></li>
+              <li title="About"><a (click)="simpleAlert()">About</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="separator"></div>
+        </li>
+        <li class="top-nav-loggedIn-user">
+          <div id="userMenu" class="btn-group actions btn-default-without-border">
+            <span id="ngTour_topmenu_switchlanguage"></span>
+            <button type="button" class="btn btn-transparent btn-default-without-border "
+              data-toggle="dropdown">
+              <img class="user-image" src="https://prism.eigenrisk.com/assets/images/default-user.png">
+              Subbu Nama <span class="caret-bottom-right"></span>
+            </button>
+          </div>
+          <div class="user-logout-options">
+            <ul>
+              <li><a (click)="simpleAlert()">My Profile</a></li>
+              <li><a (click)="simpleAlert()">Espanol</a></li>
+              <li (click)="userLoggingOut()"><a>Logout</a></li>
+            </ul>
+          </div>
+      </ul>
+    </div>
+  </div>
+
+</div>
+<app-logout-success [logOutPopUpDisplay]="logOutPopUpDisplay"></app-logout-success>

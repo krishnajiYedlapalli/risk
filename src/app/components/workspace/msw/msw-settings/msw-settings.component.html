@@ -1,0 +1,85 @@
+<div class="container">
+  <!-- <div class="ui-g-4"></div> -->
+
+  <div class="middle-column">
+    <p-card>
+      <div class="card-inner-div">
+
+        <div class="card-inner-div-1">
+          <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeeuSPh1FQNWcMJpAn_UqfGC1Z91FT9H8LVHGw1w4JobqHFlSRUQ"
+              class="avatar">
+          </div>
+          <div class="labels">
+            <div class="name">John Doe</div>
+            <div class="des">Designation</div>
+            <div class="ws-content">
+              <img src="erassets/Images/ic_checked_green.svg">
+              <div class="ws">Workspace Admin</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-inner-div-2" (click)="transferOwner()">
+          {{transferOwnerData.title}}
+        </div>
+
+      </div>
+    </p-card>
+    <div *ngIf="!workspaceService.getArchiveWorkspace()">
+        <button class="primary-button2" (click)="archiveThisWorkspace()">
+            <i class="icon-archive icon"></i>
+            Archive this Workspace
+          </button>
+      <!-- <button class="archive-workspace" (click)="archiveThisWorkspace()">
+        <img src="erassets/Images/ic_archive_white.svg">
+        <div>{{userConfirmation.buttonTitle}}</div> -->
+      <!-- </p-card> -->
+  
+     
+
+      <div class="points">
+        <div>{{ userConfirmation.alertStart}}</div>
+        <div>{{ userConfirmation.alert1}}</div>
+        <div>{{ userConfirmation.alert2}}</div>
+        <div>{{ userConfirmation.alert3}}</div>
+      </div>
+    </div>
+
+    <div *ngIf="workspaceService.getArchiveWorkspace()">
+      <!-- <button class="unarchive-workspace" (click)="unArchiveThisWorkspace()">
+        <img src="erassets\Images\ic_unArchive_white.svg">
+        <div>{{userConfirmation.unArchiveButtonTitle}}</div>
+      </button> -->
+      <button class="primary-button2" (click)="unArchiveThisWorkspace()">
+        <i class="icon-archive"></i>
+        {{userConfirmation.unArchiveButtonTitle}}
+      </button>
+
+      <div class="points">
+        <div>{{userConfirmation.unArchiveMessage}}</div>
+      </div>
+
+      <!-- <button class="delete-workspace" (click)="deleteWorkspace()">
+        <img src="erassets\Images\ic_delete_white.svg">
+        <div>{{userConfirmation.deleteButtonTitle}}</div>
+      </button> -->
+      <button class="primary-button1" (click)="deleteWorkspace()">
+        <i class="icon-delete"></i>
+        {{userConfirmation.deleteButtonTitle}}
+      </button>
+      <div class="points">
+        <div>{{userConfirmation.alertStart}}</div>
+        <div>{{userConfirmation.alert1}}</div>
+        <div>{{userConfirmation.alert2}}</div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+<app-archive-workspace [display]="display" (closePopupDisplay)=closePopupDisplay($event) [userConfirmationData]="userConfirmation"></app-archive-workspace>
+<app-transfer-owernship [display]="transfer" (closePopupDisplay)=closePopupTransferDisplay($event) [transferOwnerData]="transferOwnerData"></app-transfer-owernship>
+

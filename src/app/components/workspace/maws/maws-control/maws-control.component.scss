@@ -1,0 +1,243 @@
+@import '../../../../../styles.scss';
+.my-workspace{
+
+    width:$manage-myw-width;
+    // max-height:$manage-myw-height;
+    // width:1168px;
+    max-height: calc(100vh - 142px);
+    background-color: $manage-myw-bg-color;
+    border-radius:$manage-myw-border-radius;
+    // overflow:auto;
+    
+    // overflow-x:none;
+    position:$manage-myw-position;
+    // z-index: $manage-myw-z-index !important;
+    box-shadow:0px 1px 3px #000000;
+}
+.workspace-details{
+    overflow: auto;
+    max-height: calc(100vh - 244px);
+    width: 100%;
+}
+.search-and-filter{
+    border: 1px solid #FAFAFA;
+    background-color:  #fafafa;
+    height: 72px;
+    // padding-top: 2px;
+    border-radius:4px 4px 0px 0px;
+}
+.serach-for-workspace{
+    // padding: 0px;
+    margin-top: 8px;
+    // margin-bottom: 16px;
+    width: 100%;
+    // margin-left: 16px;
+    // margin-right: 16px;
+
+}
+.list-filter{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #E8E9EC;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    margin-top: 8px;
+    float: left;
+    margin-left:9px;
+}
+.list-filter-image{
+    width: 24px;
+    height:24px;
+    // border: 1px solid greenyellow;
+    color: pink;
+    margin-left: 8px;
+    margin-top: 7px;
+}
+.my-workspace-row{
+
+    // width:$manage-myw-row-width;
+    // height:$manage-myw-row-height;
+    // width:1168px;
+    width:100%;
+    height:120px;
+    border-bottom: $manage-myw-row-border-bottom;
+    border-bottom-style: $manage-myw-row-border-bottom-style;
+    border-bottom-color: $manage-myw-row-border-bottom-color
+}
+.isFirstRow{
+    border-top: $manage-myw-row-border-bottom;
+    border-top-style: $manage-myw-row-border-bottom-style;
+    border-top-color: $manage-myw-row-border-bottom-color
+}
+.isLastRow{
+    border-bottom:none;
+}
+.my-workspace-row-left{
+
+    // margin-top:$manage-myw-row-left-margin-top;
+    // margin-left:$manage-myw-row-left-margin-left;
+    margin-top:8px;
+    margin-bottom:24px;
+    margin-left:11px;
+    width:535px;
+    height:72px;
+}
+
+.workspace-name-icon{
+    width:$manage-workspace-name-icon-width;
+    height:$manage-workspace-name-icon-height
+}
+.workspace-name{
+    // font-size:$manage-workspace-name-font-size;
+    // color:$manage-workspace-name-color;
+    // margin-left:16px;
+    font-family:SourceSansPro-Regular;
+    font-size:18px;
+    color:#6F6E8E;
+    margin-top:-3px;
+    margin-left:-7px;
+}
+.my-workspace-text{
+    width:535px;
+    height:36px;
+}
+.my-workspace-desc{
+    width:535px;
+    height:36px;
+    // color:$manage-myw-text-color;
+    // font-size:$manage-myw-text-font-size;
+    font-family:SourceSansPro-Light;
+    color:#6E6D7C;
+    font-size:12px;
+    margin-top:-9px;
+}
+.my-workspace-conrols{
+
+    // margin-top:$manage-myw-controls-margin-top;
+    margin-top:30px;
+    width:$manage-myw-controls-width;
+    float:$manage-myw-controls-float;
+    position:$manage-myw-controls-position;
+    margin-left:70.02px;
+}
+.create-workspace-button{
+    float:right;
+    margin-right:-8px;
+}
+.view-control-position{
+    // float:$manage-mcp-float;
+    margin-top:29px;
+    // margin-bottom:34px;
+    // margin-left:60.02px;
+    // margin-left:35.02px;
+    float:right;
+    margin-right: -60px;
+}
+// .view-control{
+//     // background-color:$manage-mc-bg-color;
+//     background-color: #43425D;
+//     color:$manage-mc-color;
+//     border-radius:$manage-mc-border-radius;
+//     width:$manage-mc-width;
+//     text-align:$manage-mc-text-align;
+//     height:$manage-mc-height;
+//     line-height:$manage-mc-line-height;
+//     // font-size:$manage-mc-font-size;
+//     font-size:18px;
+//     cursor:$manage-mc-cursor;
+//     border:$manage-mc-border;
+//     font-family:SourceSansPro-Regular;
+// }
+.member-control{
+    // float:$mmc-float;
+    // margin-left:$mmc-margin-left;
+    // line-height: $mmc-line-height;
+    margin-top:36px;
+    // margin-left:177px;
+    height:14px;
+    // margin-bottom:50px;
+    float: right;
+    margin-right: -10px;
+}
+.member-control-icon{
+    // width:$mmc-icon-width;
+    // height:$mmc-icon-height;
+    width:14px;
+    height:14px;
+}
+.member-control-text{
+    // font-size:$mmc-text-font-size;
+    font-size: 12px;
+    color:$mmc-text-color;
+    width:71px;
+    height:14px;
+    // margin-top:53px;
+    // margin-bottom:53px;
+    font-family:Roboto-Light;
+    margin-left:6px;
+    margin-top: 2px;
+}
+.leave-workspace-control{
+    // float:$manage-lwc-float;
+    // line-height:$manage-lwc-line-height;
+    cursor:$manage-lwc-cursor;
+    position:relative;
+    // margin-left:45px;
+    margin-left:31.98px;
+}
+.leave-workspace-control-icon{
+    width:$manage-lwc-icon-width;
+    height:$manage-lwc-icon-height;
+    margin-top:39px;
+    // margin-left:50px;
+    float: right;
+    margin-right: -23px;
+}
+.leave-workspace-cancel-icon{
+    width:$manage-lwcancel-icon-width;
+    height:$manage-lwcancel-icon-height;
+    margin-top: -8px;
+    margin-left: -5px;
+}
+.dialog-box{
+    width:$manage-db-width;
+    height:$manage-db-height;
+    background-color: $manage-db-bg-color;
+    border-radius:$manage-db-border-radius;
+    box-shadow:$manage-db-box-shadow;
+    position:$manage-db-position;
+    // top: $manage-db-top;
+    // right: $manage-db-right;
+    top: 29px;
+    right: -29px;
+    // padding-left: $manage-db-padding-left;
+    // padding-top: $manage-db-padding-top;
+    padding-top:13px;
+    padding-left:16px;
+}
+.leave-workspace-text{
+    font-size:14px;
+    color:#6E6D7C;
+    font-family:SourceSansPro-Regular;
+    margin-left: -6px;
+    margin-top: -3px;
+}
+:host/deep/.ui-scrollpanel-bar-y {
+    width: $manage-host-bar-y-width;
+}
+.workspace-details::-webkit-scrollbar {
+    width: 6px;
+}
+.workspace-details::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+.workspace-details::-webkit-scrollbar-thumb {
+    background: rgba(00, 00, 00, 0.16); 
+    border-radius: 6px;
+}
+.workspace-details::-webkit-scrollbar-thumb:hover {
+    background: rgba(00, 00, 00, 0.16); 
+}
+app-search-box {
+    width: 100%;
+}

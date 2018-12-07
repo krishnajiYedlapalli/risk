@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+}
+.headers{
+    margin:0px;
+}
+.header-wrapper{
+    background-color: #43425D;
+    max-height: 60px;
+    margin:0px;
+    font-family: Source Sans Pro;
+}
+
+.alignleft {
+    float: left;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 13px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+ul{
+    display: inline-block;
+    list-style-type: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+} 
+/* alignment of div */
+.headers .top-menu {
+    color: #FFFFFF;
+    padding: 18px 0 0;
+    pointer-events: auto;
+}
+.alignright {
+    float: right;
+}
+.headers .top-menu ul {
+    margin: 0;
+}
+ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+ul {
+    list-style: none;
+}
+.navbar-top-links li {
+    display: inline-block;
+    margin-right:2px;
+}
+
+.headers .top-menu ul>li>a {
+    color: #fff;
+}
+.navbar-top-links li>a {
+    padding: 20px 10px;
+    min-height: 50px;
+}
+.disabled-link {
+    color: grey!important;
+    cursor: default;
+}
+.tour-info-circle {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    line-height: 0.3em;
+    background: #fff;
+    color: #AF1844;
+    border-radius: 1em;
+}
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.btn-group>.btn:first-child {
+    margin-left: 0;
+}
+.btn-group>.btn {
+    position: relative;
+    float: left;
+}
+.btn-transparent {
+    background: 0 0;
+}
+.btn {
+    -webkit-border-radius: 6px;
+    /* -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px; */
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 11px;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    line-height: 1.42857143;
+    user-select: none;
+}
+.separator {
+    background: #979da3;
+    margin: 0 3px;
+    height: 13px;
+}
+
+.separator, .separator-style, .separator-style-2 {
+    width: 1px;
+    display: inline-block;
+}
+.navbar-top-links li:last-child {
+    margin-right: 15px;
+}
+// code already exits at line 77
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.btn-group>.dropdown-toggle:not(:first-child) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+//code already exits
+.btn-group>.btn {
+    position: relative;
+    float: left;
+}
+.user-image {
+    position: relative;
+    width: 25px;
+    top: -3px;
+}
+img {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+.caret-bottom-right {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-bottom: 6px solid;
+    border-left: 6px solid transparent;
+}
+.btn-default-without-border{
+    color: #fff;
+}
+.dropdown-menu{
+    float: left;
+    min-width: 160px;
+    list-style: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    background-clip: padding-box;
+}
+.top-nav-loggedIn-user{
+    position:relative;
+}
+.top-nav-loggedIn-user:hover .user-logout-options ul{
+    display:block;
+    z-index:1!important;
+}
+.user-logout-options ul{
+    position:absolute;
+    background-color:white;
+    width:200px;
+    padding-left:0px;
+    display:none;
+    border:1px solid grey;
+    border-radius:4px;
+    right:-5px;
+}
+.user-logout-options ul li{
+    display:block;
+    padding:10px;
+    width:200px;
+    cursor:pointer;
+}
+.user-logout-options ul li a{
+    color:black!important;
+    text-decoration:none;
+}
+.user-logout-options ul li:hover{
+    background-color: grey;
+}
+
+.top-nav-help{
+    position:relative;
+}
+.top-nav-help:hover .top-nav-help-options ul{
+    display:block;
+    z-index:1!important;
+}
+.top-nav-help-options ul{
+position:absolute;
+background-color:white;
+width:200px;
+padding-left:0px;
+display:none;
+border:1px solid grey;
+border-radius:4px;
+right:-100px;
+}
+.top-nav-help-options ul li{
+    display:block;
+    padding:10px;
+    width:200px;
+    cursor:pointer;
+}
+.top-nav-help-options ul li a{
+color:black!important;
+text-decoration: none;
+}
+.top-nav-help-options ul li:hover{
+    background-color:gray;
+}
+.top-nav-help-options ul li:first-child{
+    border-bottom:1px solid black;
+}
+

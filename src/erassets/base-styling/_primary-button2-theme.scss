@@ -1,0 +1,30 @@
+// @import "variables";
+@import "./variables";
+
+@mixin primary-button2-theme() {
+
+
+  .primary-button2 {
+    @extend %buttonbase;
+    border: none;
+    height: 50px;
+   
+
+    &:not([disabled]) {
+      background-color: map-get($primary-button2, normal);
+
+      &:active {
+        background-color: map-get($primary-button2, pressed);
+      }
+    }
+
+    &[disabled] {
+      background-color: map-get($primary-button2, disabled);
+      cursor: not-allowed;
+    }
+    // & .icon{
+    //   padding:17px 10px 17px 22px;
+    //   font-size: 16px;
+    // }
+  }
+}

@@ -1,0 +1,50 @@
+
+<p-dialog [(visible)]="display" [modal]="true" [responsive]="true" [width]="600" [height]='576' [minWidth]="200"
+  [baseZIndex]="10000" [contentStyle]="{'padding':'0px','margin':'0px','border-radius':'4px', 'border':'none'}"
+  [showHeader]="false">
+  <div class="ui-g transfer-ownership-header">
+    <div class="ui-g-11 transfer-ownership">
+      {{transferOwnerData.title}}
+    </div>
+    <div class="ui-g-12 ui-md-1" (click)="closePopup()">
+      <img class="popup-close-icon" src="erassets\Images\WorkSpace_Images\popupCloser.svg">
+    </div>
+  </div>
+  <div class="search-and-sent-mail">
+    <div class="ui-g-1" style="height:72px"></div>
+    <div class="ui-g-10">
+      <app-search-box (returnUserOption)="returnUserOption($event)"></app-search-box>
+    </div>
+    <div class="ui-g-1" style="height:72px"></div>
+  </div>
+  <div>
+      <div class="ui-g-12 members-data">
+        <div *ngFor="let specificMember of members | memberPipe:userInput; index as i " class="non-members-list">
+          <div class="specific-non-member" (click)="selectMember(i)" [ngClass]="{'selectedMember':i==selectedIndex}">
+            <div style="float:left;display: inline-flex">
+            <img src="{{specificMember.ImageUrl}}" class="personal-image">
+            <div class="non-member-data">
+              <div class="person-name">
+                {{specificMember.MemberName}}
+              </div>
+              <div class="person-designation">
+                {{specificMember.Designation}}
+              </div>
+              <div class="person-position">
+                <img src="erassets\Images\ic_checked_green.svg" class="check-mark" />
+                <span class="position-label">{{specificMember.Position}}</span>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="transfer-owernship-message">
+      {{transferOwnerData.message}}
+    </div>
+    <div class="ui-g userChoice">
+      <button type="button" class="ui-sm-12 ui-md-6 backward-button" (click)="closePopup()">{{transferOwnerData.secondaryButton}}</button>
+      <button type="button" class="ui-sm-12 ui-md-6 forward-button" (click)="transferOwnerOfWorkspace()" [ngClass]="{'transferOwnerButton':memberSelected}">{{transferOwnerData.primaryButton}}</button>
+    </div>
+  </div>
+</p-dialog>

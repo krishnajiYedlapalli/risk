@@ -1,0 +1,21 @@
+@import "./variables";
+
+@mixin radiobutton-theme(){
+
+    .radiobutton{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        background-color: map-get($colors, white);
+        border: 3px solid map-get($colors, pale-rose);
+        &:hover{
+            border-color: map-get($colors, salmon);
+          }
+          &:checked{
+            background-image: radial-gradient(circle,map-get($colors, dusk),map-get($colors, dusk));
+            border-color: map-get($colors, salmon);
+          }
+    }
+}

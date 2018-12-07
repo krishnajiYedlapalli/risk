@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{fill:#f48892}
+        </style>
+    </defs>
+    <g id="ic_visibility_red" transform="translate(-148 -142)">
+        <path id="Path_393" d="M0 0h24v24H0z" class="cls-1" data-name="Path 393" transform="translate(148 142)"/>
+        <path id="Path_394" d="M12 4.5a11.824 11.824 0 0 0-11 7.49 11.819 11.819 0 0 0 22 0A11.824 11.824 0 0 0 12 4.5zm0 12.483a4.993 4.993 0 1 1 5-4.993 5 5 0 0 1-5 4.993zm0-7.989a3 3 0 1 0 3 3 2.994 2.994 0 0 0-3-3z" class="cls-2" data-name="Path 394" transform="translate(148.002 142.01)"/>
+    </g>
+</svg>

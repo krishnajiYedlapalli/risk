@@ -1,0 +1,39 @@
+<div *ngIf="!showWorkSpacesOptions" class="workspace-logo-option">
+    <img class="brand-logo-img" src="/api/getLogoForTenant" alt="Brand Logo">
+  <p-panel *ngIf="workSpaceService.getSelectedAccount()" [showHeader]="false">
+    <div class="ui-inputgroup menu-workspace" (click)="showWorkSpaceMenu($event)">
+      <span id="myId" class="workspace-input">{{workSpaceService.getSelectedAccount().account_name}}</span>
+      <img src="erassets\Images\ic_workspace_active.svg" class="selected-window-input">
+
+      <img src="erassets\Images\ic_downchev_dark.svg" class="down-arrow">
+    </div>
+  </p-panel>
+</div>
+<div *ngIf="showWorkSpacesOptions" style="border:none;" class="model-menu">
+  <p-panel [showHeader]="false">
+    <div style="margin-left:9px;margin-right:10px;">
+    <app-search-box (returnUserOption)="returnUserOption($event)"></app-search-box>
+  </div>
+    <div class="custombar1">
+      <div *ngFor="let data of workSpaceService.getAccounts() | workspacesPipe:userInput;last as isLast;first as isFirst" (click)="userSelectedWorkSpace(data)"
+        class="my-data" [ngClass]="{'isLastMenuOption': isLast}">
+        <img *ngIf="data.account_id == workSpaceService.getSelectedAccount().account_id" src="erassets\Images\desktopWithRightMark.svg" class="data-window-image">
+        <img *ngIf="data.account_id != workSpaceService.getSelectedAccount().account_id" src="erassets\Images\desktopImage.svg" class="data-window-image">
+        <span>{{data.account_name}}</span>
+        <div *ngIf="data.role_id == 0">
+          <img src="erassets\Images\manageWorkspace.svg" class="setting-img" (click)="manageWorkspace()" />
+        </div>
+      </div>
+    </div>
+
+    <div class="workspace" style="text-align:center;margin-top: 25px;">
+      <div class="create-workspace">
+          <button class="primary-button1" (click)="createNewWorkspace()">
+              <i class="icon icon-add"></i>Create Workspace</button>
+      </div>
+      <div class="mange-workspace">
+        <a style="color:#43425D" (click)="manageAllYourWorkspace()">{{manageAllYourWorkspacesLabel}}</a>
+      </div>
+    </div>
+  </p-panel>
+</div>

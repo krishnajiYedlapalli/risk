@@ -1,0 +1,114 @@
+
+// Base variable
+$basewidth: 8px;
+$baseheight: 8px;
+
+%buttonbase {
+  border-radius: 4px;
+  font-size: 18px;
+    font-family: 'SourceSansPro-Regular';
+  // font: 400 18px Source Sans Pro;
+  text-align: center;
+  min-width: 185px;
+  min-height: 40px;
+  padding: 0px 32px 0px 32px;
+  color: #ffffff;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+
+  .icon {
+    position: absolute;
+    top: 31%;
+    font-size: 20px;
+    left: 5%;
+    // margin-right: 8px;
+    // vertical-align: top;
+  }
+// %buttonbase {
+//   border-radius: 4px;
+//   font-size: 18px;
+//   font-family: 'SourceSansPro-Regular';
+//   // font: 400 18px Source Sans Pro;
+//   text-align: center;
+//   min-width: 185px;
+//   min-height: 40px;
+//   padding: 0px 32px 0px 32px;
+//   color: #ffffff;
+//   box-sizing: border-box;
+//   cursor: pointer;
+
+//   .icon {
+//     font-size: 20px;
+//     margin-left: -10px;
+//     margin-right: 8px;
+//     vertical-align: top;
+//   }
+
+  &.inline {
+    height: 40px;
+    font-size: 14px;
+
+    .icon {
+      font-size: 18px;
+    }
+  }
+};
+
+$colors:(
+  salmon:#f48892,
+  salmon-dark: #e57781,
+  salmon-light: #f7b3b9,
+  dusk: #43425d,
+  dusk-dark:#2f2e50,
+  dusk-light:#838296,
+  white:#ffffff,
+  pale-grey:#e8e9ec,
+  sky-blue:#74c8fc,
+  steel:#7c7b98,
+  disabled-background-color:#f0f0f0,
+  disabled-color: #bcbccb,
+  pale-rose:#f7b3b9
+);  
+
+$primary-button1: (
+  normal: map-get($colors,salmon),
+  pressed: map-get($colors,salmon-dark),
+  disabled: map-get($colors,salmon-light),
+ 
+);
+
+$primary-button2: (
+  normal: map-get($colors,dusk),
+  pressed: map-get($colors,dusk-dark),
+  disabled: map-get($colors,dusk-light),
+);
+$button-propety: (
+    border-size:1px, border-style:solid, );
+
+%inputfield-propety {
+  min-width: 400px;
+  min-height: 40px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #4d4f5c;
+  line-height: 25px;
+  font-size: 13px;
+  font-family: 'SourceSansPro-Regular';
+  // font: 400 13px Source Sans Pro;
+  border: 1px solid;
+  padding-left: 32px;
+  caret-color: #3b86ff;
+};
+
+$inputfield-colors:(
+  idle: #e8e9ec,
+  hover:#808495,
+  pressed: #74c8fc,
+  error: #ff6565,
+  disabled: #e8e9ec ,
+  disabled-background-color:#f0f0f0,
+  disabled-color: #bcbccb,
+  placeholder-color: #cecfd0,
+)
+

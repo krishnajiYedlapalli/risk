@@ -1,0 +1,82 @@
+@import '../../../../styles.scss';
+
+.user-confirmation{
+    background-color: #ffffff;
+}
+
+.backward-button{
+    width: $lwd-backward-btn-width;
+    background-color: $lwd-backward-btn-bg-color;
+    border-top-left-radius: $lwd-backward-btn-border-tl-radius;
+    border-top-right-radius: $lwd-backward-btn-border-tr-radius;
+    border-bottom-right-radius: $lwd-backward-btn-border-br-radius;
+    border-bottom-left-radius: $lwd-backward-btn-border-bl-radius;
+    color:$lwd-backward-btn-color;
+    height:$lwd-backward-btn-height;
+    border:$lwd-backward-btn-border;
+    cursor:$lwd-backward-btn-cursor;
+}
+
+.panel-header{
+    height:$lwd-panel-header-height;
+    border-bottom:$lwd-panel-header-border-bottom;
+    border-bottom-style:$lwd-panel-header-border-bottom-style;
+    border-bottom-color: $lwd-panel-header-border-bottom-color;
+}
+
+.header-text{
+    font-size: $lwd-header-text-font-size;
+    color:$lwd-header-text-color;
+    margin-top: $lwd-header-text-margin-top;
+    padding-top: $lwd-header-text-padding-top;
+    text-align: $lwd-header-text-alignment;
+}
+
+.forward-button{
+    width: $lwd-forward-btn-width;
+    height:$lwd-forward-btn-height;
+    background-color: $lwd-forward-btn-bg-color;
+    border-top-left-radius: $lwd-forward-btn-border-tl-radius;
+    border-top-right-radius: $lwd-forward-btn-border-tr-radius;
+    border-bottom-right-radius: $lwd-forward-btn-border-br-radius;
+    border-bottom-left-radius: $lwd-forward-btn-border-bl-radius;
+    color:$lwd-forward-btn-color;
+    border:$lwd-forward-btn-border;
+    cursor:$lwd-forward-btn-cursor;
+}
+
+.close-icon{
+    width:$lwd-close-icon-width;
+    height:$lwd-close-icon-height;
+    margin-top:$lwd-close-icon-margin-top;
+    cursor:$lwd-close-icon-cursor;
+}
+
+.leave-workspace-text{
+    width:$lwd-lwt-width;
+    height:$lwd-lwt-height;
+}
+
+.leave-workspace-lower-text{
+    width:$lwd-lwlt-width;
+    height:$lwd-lwlt-height;
+    text-align:$lwd-lwlt-text-align;
+    color:$lwd-lwlt-color;
+    margin-left: $lwd-lwlt-margin-left;
+    // margin-top: $lwd-lwlt-margin-top;
+    margin-left: $lwd-lwlt-margin-right-left;
+    margin-right: $lwd-lwlt-margin-right-left;
+    font-size: $lwd-lwlt-font-size;
+}
+
+.leave-workspace-upper-text{
+    width:$lwd-lwut-width;
+    height:$lwd-lwut-height;
+    color:$lwd-lwut-color;
+    text-align:$lwd-lwut-text-align;
+    margin-left: $lwd-lwut-margin-right-left;
+    margin-top: $lwd-lwut-margin-top;
+    font-size: $lwd-lwut-font-size;
+    opacity: $lwd-lwut-opacity;
+    margin-right: $lwd-lwut-margin-right-left;
+ }

@@ -1,0 +1,69 @@
+<div class="my-workspace">
+    <!-- <p-scrollPanel [style]="{width: '100%', height: '500px'}"> -->
+    <div class="search-and-filter">
+      <div class="serach-for-workspace">
+        <app-search-box (returnUserOption)="returnUserOption($event)">
+          <i class="icon-filter inline-action-button"></i>
+        </app-search-box>
+      </div>
+      <!-- <div class="list-filter">
+        <img src="erassets\Images\list-filter.svg" class="list-filter-image" />
+      </div> -->
+    </div>
+    <div class="workspace-details">
+        <div *ngFor="let data of workSpaceService.getAccounts() | workspacesPipe:userInput;last as isLast;first as isFirst">
+          <div class="ui-g my-workspace-row" [ngClass]="{'isFirstRow': isFirst,'isLastRow':isLast}">
+            <div class="ui-g-6 my-workspace-row-left">
+              <div class="my-workspace-text">
+                <div class="ui-g-1">
+                  <img *ngIf="data.account_id == workSpaceService.getSelectedAccount().account_id" src="erassets\Images\desktopWithRightMark.svg" class="workspace-name-icon">
+                  <img *ngIf="data.account_id != workSpaceService.getSelectedAccount().account_id" src="erassets\Images\desktopImage.svg" class="workspace-name-icon">
+                </div>
+                <div class="ui-g-10 workspace-name"> {{data.account_name}}</div>
+              </div>
+              <div class="ui-g-12 my-workspace-desc">
+                <div>{{data.account_description}}</div>
+              </div>
+            </div>
+            <div class="ui-g-3">
+              <div class="member-control">
+                <div *ngIf="data.role_id==0">
+                  <span class="ui-g-1"><img class="member-control-icon" src="erassets\Images\WorkSpace_Images\chekWithOutlineCircle.svg"></span>
+                  <span class="ui-g-8 member-control-text">Administrator</span>
+                </div>
+                <div *ngIf="data.role_id==1">
+                  <span class="ui-g-1"><img class="member-control-icon" src="erassets\Images\WorkSpace_Images\chekWithOutlineCircle.svg"></span>
+                  <span class="ui-g-8 member-control-text">Member</span>
+                </div>
+                <div *ngIf="data.role_id==2">
+                  <span class="ui-g-1"><img class="member-control-icon" src="erassets\Images\WorkSpace_Images\chekWithOutlineCircle.svg"></span>
+                  <span class="ui-g-8 member-control-text">Guest</span>
+                </div>
+              </div>
+            </div>
+            <div class="ui-g-2">
+              <div class="view-control-position">
+                <button class="primary-button2" (click)=manageSpecificWorkSpace(data)>View</button>
+                <!-- <button type="button" class="ui-button-raised ui-button-rounded view-control" (click)=manageSpecificWorkSpace(data)>View</button> -->
+              </div>
+            </div>
+            <div class="ui-g-1">
+              <div class="leave-workspace-control">
+                <span (click)="leaveWorkSpace(data,$event)"><img class="leave-workspace-control-icon" src="erassets\Images\WorkSpace_Images\moreVert.svg"></span>
+                <div>
+                  <div *ngIf="data.show" class="ui-g dialog-box">
+                    <span (click)="showLeaveWorkSpaceUserPopup()" class="ui-g-10 leave-workspace-text">{{leaveWorkspace}}</span>
+                    <span (click)="hideLeaveWorkSpace()" class="ui-g-1"><img class="leave-workspace-cancel-icon"
+                        src="erassets\Images\WorkSpace_Images\popupCloser.svg"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- </p-scrollPanel> -->
+    </div>
+  <app-user-confirmation [display]="display" [showCancelIcon]="true" (status)="cancelOrDeleteWorkSpace($event)"
+    [userConfirmationData]="userConfirmation">
+  </app-user-confirmation>

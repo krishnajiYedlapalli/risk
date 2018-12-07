@@ -1,0 +1,45 @@
+<p-dialog [(visible)]="makeACopyPopupDisplay" [modal]="true" [responsive]="true" [width]="600" [minHeight]="373"
+  [minWidth]="200" [maximizable]="true" [baseZIndex]="10000" [contentStyle]="{'padding':'0px','margin':'0px','border-radius':'4px','max-height':'363px'}"
+  [showHeader]="false" class="user-confirmation">
+  <div>
+    <div class="ui-g pop-up-header">
+      <div class="ui-g-11 pop-up-header-copy">Copying</div>
+      <div class="ui-g-1" (click)="hideDialog()"><img class="pop-up-close" src="src\erassets\Images\WorkSpace_Images\closeWithOutlineCircle.svg"></div>
+    </div>
+    <div class="ui-g selected-object-info">
+      <div class="ui-g-6">
+        <div class="ui-g-2 selected-icon-image"><img src={{selectedObjectData.iconImage}}></div>
+        <div class="ui-g-8">
+          <div class="selected-object-name">{{selectedObjectData.objectName}}</div>
+          <div class="selected-object-date">{{selectedObjectData.customDate}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="ui-g copying-object-name">
+      <div class="ui-g-12 copying-name-header">Name</div>
+      <div class="ui-g-12 copying-name-input"><input type="text" placeholder="{{selectedObjectData.objectName}} copy" [(ngModel)]="copiedObjectName"></div>
+    </div>
+    <div class="ui-g copying-to-workspace">
+      <div class="ui-g-12 selecting-workspace-header">Workspace (Select a workspace where you want to save the copy)</div>
+      <div class="ui-g-12 selecting-workspace">
+          <p-dropdown [options]="workspaceList" [(ngModel)]="selectedWorkspace" [style]="{'width':'90%','margin-left':'32px','margin-top':'-9px'}" >
+              <ng-template let-item pTemplate="selectedItem"> 
+                 <img src="erassets\Images\desktopWithRightMark.svg" class="desktop-image" /> 
+                 <div  class="dropdown-workspace-list">{{item.label}}</div>
+             </ng-template> 
+             <ng-template let-workspace pTemplate="item"> 
+                 <div class="ui-helper-clearfix" style="position: relative;height:25px;" >
+                  <img src="erassets\Images\desktopWithRightMark.svg" class="desktop-image" /> 
+                  <div class="dropdown-workspace-list">{{workspace.label}}</div> 
+                </div>
+             </ng-template>
+         </p-dropdown>
+      </div>
+    </div>
+    <div class="ui-g">
+        <button type="button" class="ui-sm-12 ui-md-6 backward-button"  (click)="hideDialog()">Cancel</button>
+        <button type="button" class="ui-sm-12 ui-md-6 forward-button"  (click)="copySelectedObject(copiedObjectName,selectedWorkspace)">Copy</button>
+      </div>
+  </div>
+</p-dialog>
+<p-toast position="top-center"></p-toast>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ic_addperson_white" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{fill:#fff}
+        </style>
+    </defs>
+    <path id="Path_583" d="M0 0h20v20H0z" class="cls-1" data-name="Path 583"/>
+    <path id="Path_584" d="M12.667 10.667a3.333 3.333 0 1 0-3.334-3.334 3.332 3.332 0 0 0 3.334 3.334zM5.167 9V6.5H3.5V9H1v1.667h2.5v2.5h1.667v-2.5h2.5V9zm7.5 3.333C10.442 12.333 6 13.45 6 15.667v1.667h13.333v-1.667c0-2.217-4.441-3.334-6.666-3.334z" class="cls-2" data-name="Path 584" transform="translate(-.167 -.667)"/>
+</svg>

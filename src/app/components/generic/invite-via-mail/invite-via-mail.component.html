@@ -1,0 +1,41 @@
+<p-dialog [(visible)]="display" [modal]="true" [responsive]="true" [width]="460" [height]='264' [minWidth]="200"
+  [baseZIndex]="10000" [contentStyle]="{'padding':'0px','margin':'0px','border-radius':'4px', 'border':'none'}"
+  [showHeader]="false">
+  <div *ngIf="userConfirmationData">
+    <div class="ui-g panel-header">
+      <div class="ui-g-11 invite-via-mail">
+        {{userConfirmationData.title}}
+      </div>
+      <div class="ui-g-12 ui-md-1" (click)="closePopup()">
+        <img class="close-icon" src="erassets\Images\WorkSpace_Images\popupCloser.svg">
+      </div>
+    </div>
+    <div *ngIf="!loader && !mailStatus">
+      <div class="reciever-mail-field">
+        <input type="email" class="mail-entry" placeholder="Email Address" [(ngModel)]="memberMailId">
+      </div>
+      <div class="ui-sm-12 invite-mail-suggestion">{{userConfirmationData.message}}</div>
+      <div *ngIf="warning" class="ui-sm-12 invite-mail-warning">{{userConfirmationData.warningMessage}}</div>
+      <div *ngIf="!warning" class="ui-g">
+        <button type="button" class="ui-sm-12 ui-md-6 backward-button" (click)="closePopup()">{{userConfirmationData.primaryCancelButton}}</button>
+        <button type="button" class="ui-sm-12 ui-md-6 forward-button" (click)="validateEmail(memberMailId)" [ngClass]="{'sendInviteButton': !memberMailId}">{{userConfirmationData.primarySuccessButton}}</button>
+      </div>
+      <div *ngIf="warning" class="ui-g">
+        <button type="button" class="ui-sm-12 ui-md-6 backward-button" (click)="closePopup()">{{userConfirmationData.secondaryCancelButton}}</button>
+        <button type="button" class="ui-sm-12 ui-md-6 forward-button" (click)="showLoading()" [ngClass]="{'sendInviteButton': !memberMailId}">{{userConfirmationData.secondarySuccessButton}}</button>
+      </div>
+    </div>
+    <div>
+      <div *ngIf="loader" class="sending-on-progress">
+        <img class="loader-image" src="erassets\Images\ic_loader_light.svg" />
+        <span class="loader-data">Sending..</span>
+      </div>
+      <div *ngIf="mailStatus" class="sending-failed">
+          <img class="mail-sent-failed-image" src="erassets\Images\ic_checked_green.svg" />
+          <span class="failed-message">Sorry something is happend, your invitation is failed.</span>
+        </div>
+    </div>
+  </div>
+</p-dialog>
+
+<!-- <button type="text" (click)="showDialog()" icon="pi pi-info-circle" label="Show"></button> -->

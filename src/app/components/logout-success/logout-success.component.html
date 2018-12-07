@@ -1,0 +1,19 @@
+<p-dialog [showHeader]="false" [(visible)]="logOutPopUpDisplay" [modal]="true" [responsive]="true" [width]="500" [minWidth]="200"
+  [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+  <div class="logout-logo">
+    <img src="https://prism.eigenrisk.com/assets/images/logo-eigen.png" alt="logo">
+  </div>
+  <div>
+    <div>
+      <div class="logout-success">Logout Successful</div>
+      <div class="alert" style="text-align: center">
+        <p> You have successfully logged out of EigenPrism.</p>
+      </div>
+    </div>
+    <div class="alert" style="text-align: center">
+      <p>You will be automatically redirected to the login page in <span style="font-weight: bold; font-size: 14px;">
+        {{timeLeft}} Seconds</span>,
+        else you can click <a (click)='logOutOnPopupLinkClick()' href="javascript:void(0)">here</a> to go to the login page. </p>
+    </div>
+  </div>
+</p-dialog>
